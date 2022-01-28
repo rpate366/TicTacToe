@@ -3,6 +3,7 @@ Tic Tac Toe Player
 """
 import copy
 import math
+import time
 
 X = "X"
 O = "O"
@@ -149,6 +150,8 @@ def minimax(board):
     """
     Returns the optimal action for the current player on the board.
     """
+    startTime = time.time()
+
     #Check if a move can even be made.
     if terminal(board):
         return None
@@ -188,4 +191,5 @@ def minimax(board):
                 value = new_value
                 move = action
     
+    print("The algorithmn took:", time.time() - startTime)
     return move
